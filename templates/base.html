@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="master.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <title>What do you want to eat?</title>
+  </head>
+  <body>
+
+    <div class="header">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Eat Eat</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class = "nav-link" href="{% url 'meals:create' %}">입력</a>
+            </li>
+            <li class="nav-item">
+              <a class = "nav-link" href="#">사용자</a>
+            </li>
+          </ul>
+
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+        {% block body_block %}
+        {% endblock %}
+
+      <!-- (랜덤으로 사진입력, 사진 하나만 불러오기) -->
+        <!--<div class="picture_food">-->
+            <!--<a href="음식 포스트 글로!!"><img src="#" alt="" class = "img-rounded"></a>-->
+            <!--<h1>Food.info</h1>-->
+            <!--<ul>-->
+              <!--<li>{{post.details}}</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="left">-->
+      <!--<i class="fas fa-angle-left"><a href="이전글"></a></i>-->
+
+    <!--</div>-->
+    <!--<div class="right">-->
+      <!--<i class="fas fa-angle-right"><a href="랜덤 음식포스트"></a></i>-->
+
+    </div>
+
+  </body>
+</html>
