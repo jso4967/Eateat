@@ -7,7 +7,7 @@ class IndexView(TemplateView):
     template_name = 'index.html'
 
 class MealCreateView(CreateView):
-    fields = ("meal_name", "restaurant_name", "price_range", "satisfaction")
+    fields = ("meal_photo", "meal_name", "restaurant_name", "price_range", "satisfaction")
     model = models.Meal
 
 class MealList(ListView):
