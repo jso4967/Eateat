@@ -7,8 +7,8 @@ class Meal(models.Model):
                ('중간', '중간'),
                ('낮음', '낮음')]
 
+    meal_photo = models.ImageField(blank=True)
     meal_name = models.CharField(max_length=200, default='')
-    # meal_picture =
     restaurant_name = models.CharField(max_length=200, default='')
     price_range = models.CharField(max_length=2, choices=CHOICES, default="")
     satisfaction = models.CharField(max_length=2, choices=CHOICES, default="")
