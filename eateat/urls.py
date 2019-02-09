@@ -18,7 +18,7 @@ from django.urls import path, include
 from meals import views
 
 urlpatterns = [
-    path('', views.IndexView.as_view()),
+    path('', views.IndexView.as_view(), name='index'),
     path('admin/', admin.site.urls),
     path('meals/', include('meals.urls')),
 ]
