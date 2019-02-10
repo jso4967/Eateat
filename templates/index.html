@@ -1,20 +1,23 @@
 {% extends "base.html" %}
 
   {% block body_block %}
-    <div class="picture_food">
-      <a href="#"><img src="#" alt="" class = "img-rounded"></a>
-      <h1>Food.info</h1>
-      <ul>
-        <li>{{post.details}}</li>
-      </ul>
-    </div>
 
-    </div>
-    <div class="left">
-      <i class="fas fa-angle-left"><a href="#"></a></i>
-    </div>
+  <div class="picture_food">
+    <a href="%url MealDetail "> <img src="{{recommended_meal.meal_photo}}" class = "img-rounded"></a>
+    <h1>{{recommended_meal.meal_name}}</h1>
+    <ul>
+      <p>{{recommended_meal.restaurant_name}}</p>
+      <p>{{recommended_meal.price_range}}</p>
+      <p>{{recommended_meal.satisfaction}}</p>
+    </ul>
+  </div>
 
-    <div class="right">
-      <i class="fas fa-angle-right"><a href="#"></a></i>
-    </div>
+  </div>
+  <div class="left">
+    <i class="fas fa-angle-left"><a href="#"></a></i>
+  </div>
+
+  <div class="right">
+    <i class="fas fa-angle-right"><a href="#"></a></i>
+  </div>
   {% endblock %}
