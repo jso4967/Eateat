@@ -6,6 +6,10 @@
 .picture_food{
   text-align: center;
   border : 1px solid black;
+  padding-top: 30%;
+  padding-right: 10%;
+  padding-bottom: 30%;
+  padding-left: 10%;
 }
 
 .left{

@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html>
+{% load static %}
   <head>
-    <link rel="stylesheet" href="master.css">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <title>What do you want to eat?</title>
+    <style>
+
+.container{
+  float: center;
+  padding-top: 20%
+  padding-bottom: 30%;
+  text-align : center;
+  width: 33%;
+  height:100%
+}
+.picture_food{
+  text-align: center;
+  border : 3px solid black;
+
+}
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.left{
+  float:left;
+  float: left;
+  width: 33%;
+  height:100%
+}
+.left_1{
+  padding-top: 20%
+  padding-bottom: 30%;
+}
+
+.right{
+  float:right;
+  float: right;
+  width: 33%;
+  height:100%
+}
+.right_1{
+  padding-top: 20%
+  padding-bottom: 30%;
+}
+
+    </style>
   </head>
   <body>
 
@@ -31,7 +76,7 @@
       </nav>
     </div>
 
-    <div class="container">
+
         {% block body_block %}
         {% endblock %}
 
@@ -51,7 +96,6 @@
     <!--<div class="right">-->
       <!--<i class="fas fa-angle-right"><a href="랜덤 음식포스트"></a></i>-->
 
-    </div>
 
   </body>
 </html>

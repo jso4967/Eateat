@@ -5,12 +5,19 @@ from . import models
 
 class IndexView(TemplateView):
     template_name = 'index.html'
+    model = models.Meal
+    recommended_meal = models.Meal.objects.order_by("?").first()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["recommended_meal"] = self.recommended_meal
+        return context
 
 class MealCreateView(CreateView):
     fields = ("meal_photo", "meal_name", "restaurant_name", "price_range", "satisfaction")
     model = models.Meal
 
-class MealList(ListView):
+class MealListView(ListView):
     pass
 
 class MealDetail(DetailView):
