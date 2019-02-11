@@ -6,7 +6,14 @@ from . import models
 class IndexView(TemplateView):
     template_name = 'index.html'
     model = models.Meal
-    recommended_meal = models.Meal.objects.order_by("?").first()
+    index = models.Meal.objects.count() - 1
+    try:
+        recommended_meal = models.Meal.objects.get(id=index)
+    except:
+        recommended_meal = models.Meal.objects.order_by("?").first()
+        print("exception occured")
+    finally:
+        print(recommended_meal.id, index)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -25,3 +32,7 @@ class MealDetail(DetailView):
 
 class DeleteMeal(DeleteView):
     pass
+
+def base_layout(request):
+    template = 'base.html'
+    return render(request, template)
