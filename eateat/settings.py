@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'meals',
+    'pwa'
 ]
 
 MIDDLEWARE = [
@@ -123,3 +124,5 @@ STATICFIELS_DIR = [os.path.join(BASE_DIR, 'static')]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'static/eateat/js', 'serviceworker.js')
