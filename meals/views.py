@@ -1,21 +1,26 @@
 from django.shortcuts import render
 from django.views.generic import (CreateView, ListView, DetailView, DeleteView, TemplateView)
 from . import models
+from django.urls import reverse
 # Create your views here.
+
 
 class IndexView(TemplateView):
     template_name = 'index.html'
     model = models.Meal
-    recommended_meal = models.Meal.objects.order_by("?").first()
+    recommended_meal = models.Meal.objects.all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["recommended_meal"] = self.recommended_meal
+        context["recommended_meal"] = models.Meal.objects.order_by('?').first()
         return context
 
 class MealCreateView(CreateView):
     fields = ("meal_photo", "meal_name", "restaurant_name", "price_range", "satisfaction")
     model = models.Meal
+
+    def get_absolute_url(self):
+        return reverse('index')
 
 class MealListView(ListView):
     pass
