@@ -6,18 +6,11 @@ from . import models
 class IndexView(TemplateView):
     template_name = 'index.html'
     model = models.Meal
-    index = models.Meal.objects.count() - 1
-    try:
-        recommended_meal = models.Meal.objects.get(id=index)
-    except:
-        recommended_meal = models.Meal.objects.order_by("?").first()
-        print("exception occured")
-    finally:
-        print(recommended_meal.id, index)
+    recommended_meal = models.Meal.objects.all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["recommended_meal"] = self.recommended_meal
+        context["recommended_meal"] = models.Meal.objects.order_by('?').first()
         return context
 
 class MealCreateView(CreateView):
