@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.views.generic import (CreateView, ListView, DetailView, DeleteView, TemplateView)
 from . import models
+from django.urls import reverse
 # Create your views here.
+
 
 class IndexView(TemplateView):
     template_name = 'index.html'
@@ -16,6 +18,9 @@ class IndexView(TemplateView):
 class MealCreateView(CreateView):
     fields = ("meal_photo", "meal_name", "restaurant_name", "price_range", "satisfaction")
     model = models.Meal
+
+    def get_absolute_url(self):
+        return reverse('index')
 
 class MealListView(ListView):
     pass
