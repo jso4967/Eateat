@@ -23,10 +23,16 @@ class MealCreateView(CreateView):
         return reverse('index')
 
 class MealListView(ListView):
-    pass
+    context_object_name = 'Meal_list'
+    model = models.Meal
+
+    def get_queryset(self):
+        return models.Meal.objects.all().order_by('?')
 
 class MealDetail(DetailView):
-    pass
+    model = models.Meal
+    context_object_name = 'Meal_detail'
+
 
 class DeleteMeal(DeleteView):
     pass

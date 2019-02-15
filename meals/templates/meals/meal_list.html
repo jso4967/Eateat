@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+    {% block body_block %}
+        {% for Meal in Meal_list %}
+            <div class="">
+              <h1>{{ Meal.meal_name}} </h1>
+            </div>
+        {%endfor%}
+    {% endblock %}
