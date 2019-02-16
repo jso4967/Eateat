@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import (CreateView, ListView, DetailView, DeleteView, TemplateView)
 from . import models
-from django.urls import reverse
+from django.urls import (reverse, reverse_lazy)
 # Create your views here.
 
 
@@ -32,7 +32,12 @@ class MealListView(ListView):
 class MealDetail(DetailView):
     model = models.Meal
     context_object_name = 'Meal_detail'
+    # template_name = 'meal_detail.html'
 
 
-class DeleteMeal(DeleteView):
-    pass
+class MealDelete(DeleteView):
+    model = models.Meal
+    success_url = reverse_lazy('Meal_detail')
+
+    def delete(pk):
+        return models.Meal.objects.delete(pk)

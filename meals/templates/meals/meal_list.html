@@ -3,7 +3,7 @@
     {% block body_block %}
         {% for Meal in Meal_list %}
             <div class="">
-              <h1>{{ Meal.meal_name}} </h1>
+              <h1><a href="{%url 'meals:detail' pk=Meal.pk %}">{{Meal.meal_name}}</a> </h1>
             </div>
         {%endfor%}
     {% endblock %}

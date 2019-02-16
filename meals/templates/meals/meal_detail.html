@@ -3,7 +3,9 @@
     {% block body_block %}
 
             <div class="">
-              <h1>{{ Meal.meal_name}} </h1>
+              <h1>{{Meal_detail.meal_name}} </h1>
+                <a href="{% url 'meals:delete'%}">삭제</a>
             </div>
 
     {% endblock %}
+P
