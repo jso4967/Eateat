@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import (CreateView, ListView, DetailView, DeleteView, TemplateView)
+from django.views.generic import (CreateView, ListView, DetailView, DeleteView, TemplateView,UpdateView,)
 from . import models
 from django.urls import (reverse, reverse_lazy)
 # Create your views here.
@@ -51,4 +51,9 @@ class MealDelete(DeleteView):
     model = models.Meal
     success_url = reverse_lazy('meals:list')
     context_object_name = 'Meal_delete'
+
+class MealUpdateView(UpdateView):
+    fields = ("meal_photo", "meal_name", "restaurant_name", "price_range", "satisfaction")
+    model = models.Meal
+
 
