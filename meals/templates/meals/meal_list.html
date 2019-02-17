@@ -1,7 +1,12 @@
-
 {% extends "base.html" %}
 
     {% block body_block %}
+
+        <form action="" method="get">
+          <input type="text" name="q" value="{{ q }}">
+          <input type="submit" value="검색">
+        </form>
+
         {% for Meal in Meal_list %}
             <div class="">
               <h1><a href="{%url 'meals:detail' pk=Meal.pk %}">{{Meal.meal_name}}</a> </h1>
