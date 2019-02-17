@@ -5,6 +5,7 @@
             <div class="">
               <h1>{{Meal_detail.meal_name}} </h1>
                 <a href="{% url 'meals:delete' pk=Meal_detail.pk%}">삭제</a>
+                <a href="{% url 'meals:update' pk=Meal_detail.pk %}">update</a>
             </div>
 
     {% endblock %}
