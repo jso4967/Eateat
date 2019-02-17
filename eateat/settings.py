@@ -25,6 +25,7 @@ SECRET_KEY = '1wy#s1$xb1!061$q7z02z143yplcx&w^_$b2%=0fjizp+@fajw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = ["hezekiah.pythonanywhere.com", '127.0.0.1',]
 
 
@@ -38,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'meals',
+    'pwa',
+    'debug_toolbar'
 ]
 
 MIDDLEWARE = [
@@ -48,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'eateat.urls'
@@ -119,7 +123,27 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFIELS_DIR = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIR = [os.path.join(BASE_DIR, 'static')]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+######################################################
+PWA_APP_NAME = 'My App'
+PWA_APP_DESCRIPTION = "My app description"
+PWA_APP_ICONS = [
+{
+'src': '/media/icon-72x72.png',
+'sizes': '72x72'
+}
+]
+PWA_APP_SPLASH_SCREEN = [
+{
+'src': '/media/splash-640x1136.png',
+'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
+}
+]
+PWA_APP_DIR = 'ltr'
+PWA_APP_START_URL = '/'
+PWA_SERVICE_WORKER_PATH = os.path.join(TEMPLATE_DIR, 'serviceworker.js')
+INTERNAL_IPS = ['127.0.0.1']
