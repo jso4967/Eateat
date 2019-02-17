@@ -23,8 +23,7 @@ class MealCreateView(CreateView):
         return reverse('index')
 
 class MealListView(ListView):
-    fields = ("meal_photo", "meal_name", "restaurant_name", "price_range", "satisfaction")
-    model = models.Meal
+    pass
 
 class MealDetail(DetailView):
     pass
