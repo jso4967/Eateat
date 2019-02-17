@@ -20,9 +20,16 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('', views.IndexView.as_view(), name='index'),
+    path('', include('pwa.urls')),
+    path(r'', views.IndexView.as_view(), name='index'),
     path('admin/', admin.site.urls, name='admin'),
     path('meals/', include('meals.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG == 1:
+    import debug_toolbar
+    urlpatterns = [
+        path('__debug__/', include(debug_toolbar.urls))
+    ] + urlpatterns
