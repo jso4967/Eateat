@@ -37,7 +37,18 @@ class MealDetail(DetailView):
 
 class MealDelete(DeleteView):
     model = models.Meal
-    success_url = reverse_lazy('Meal_detail')
+    success_url = reverse_lazy('meals:list')
+    context_object_name = 'Meal_delete'
 
-    def delete(pk):
-        return models.Meal.objects.delete(pk)
+
+def post_list(request):
+    qs = models.meal.object.all
+
+    q = request.Get.get('q', '')
+
+    if q:
+        qs = qs.filter(title_icontains=q)
+        return render(request, 'meals/meal_list.html',{
+            'meal_list' : qs,
+            'q' : q,
+        })
