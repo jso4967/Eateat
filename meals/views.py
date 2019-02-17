@@ -27,7 +27,19 @@ class MealListView(ListView):
     model = models.Meal
 
     def get_queryset(self):
-        return models.Meal.objects.all().order_by('?')
+        try:
+            meal_name = self.request.GET.get('q')
+            print('test1')
+        except:
+            meal_name = ''
+            print('test2')
+
+        if meal_name != ('' or None):
+            object_list = models.Meal.objects.filter(meal_name__icontains = meal_name)
+            print(meal_name, object_list)
+        else:
+            object_list = models.Meal.objects.all()
+        return object_list
 
 class MealDetail(DetailView):
     model = models.Meal
@@ -40,15 +52,3 @@ class MealDelete(DeleteView):
     success_url = reverse_lazy('meals:list')
     context_object_name = 'Meal_delete'
 
-
-def post_list(request):
-    qs = models.meal.object.all
-
-    q = request.Get.get('q', '')
-
-    if q:
-        qs = qs.filter(title_icontains=q)
-        return render(request, 'meals/meal_list.html',{
-            'meal_list' : qs,
-            'q' : q,
-        })
