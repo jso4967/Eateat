@@ -29,10 +29,8 @@ class MealListView(ListView):
     def get_queryset(self):
         try:
             meal_name = self.request.GET.get('q')
-            print('test1')
         except:
             meal_name = ''
-            print('test2')
 
         if meal_name != ('' or None):
             object_list = models.Meal.objects.filter(meal_name__icontains = meal_name)
