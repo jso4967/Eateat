@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+    {% block body_block %}
+
+            <div class="">
+              <h1>{{Meal_detail.meal_name}} </h1>
+                <a href="{% url 'meals:delete' pk=Meal_detail.pk%}">삭제</a>
+            </div>
+
+    {% endblock %}

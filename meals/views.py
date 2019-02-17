@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import (CreateView, ListView, DetailView, DeleteView, TemplateView)
 from . import models
-from django.urls import reverse
+from django.urls import (reverse, reverse_lazy)
 # Create your views here.
 
 
@@ -23,10 +23,32 @@ class MealCreateView(CreateView):
         return reverse('index')
 
 class MealListView(ListView):
-    pass
+    context_object_name = 'Meal_list'
+    model = models.Meal
+
+    def get_queryset(self):
+        return models.Meal.objects.all().order_by('?')
 
 class MealDetail(DetailView):
-    pass
+    model = models.Meal
+    context_object_name = 'Meal_detail'
+    # template_name = 'meal_detail.html'
 
-class DeleteMeal(DeleteView):
-    pass
+
+class MealDelete(DeleteView):
+    model = models.Meal
+    success_url = reverse_lazy('meals:list')
+    context_object_name = 'Meal_delete'
+
+
+def post_list(request):
+    qs = models.meal.object.all
+
+    q = request.Get.get('q', '')
+
+    if q:
+        qs = qs.filter(title_icontains=q)
+        return render(request, 'meals/meal_list.html',{
+            'meal_list' : qs,
+            'q' : q,
+        })
