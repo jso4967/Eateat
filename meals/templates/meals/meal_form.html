@@ -1,6 +1,13 @@
-{% extends 'base.html' %}
+{% extends  'base.html' %}
 {% block body_block %}
-    <h1>음식 추가</h1>
+    <h1>
+  {% if not form.instance.pk %}
+  Create Meal
+  {% else %}
+  Update Meal
+  {% endif %}
+</h1>
+
 
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
