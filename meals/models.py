@@ -14,6 +14,10 @@ class Meal(models.Model):
     price_range = models.CharField(max_length=2, choices=CHOICES, default="")
     satisfaction = models.CharField(max_length=2, choices=CHOICES, default="")
     created_date = models.DateTimeField(default=timezone.now)
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 246b13b... TEST AT 8:19
     def get_absolute_url(self):  # redirect시 활용
         return reverse('index')
 
