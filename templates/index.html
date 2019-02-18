@@ -2,7 +2,7 @@
 
   {% block body_block %}
   <div class="container">
-    <div class="picture_food">
+    <div class="picture_food" style="margin-top: 50px;">
 
         <a href="{%url 'meals:detail' pk=recommended_meal.pk %}"><img src="{{recommended_meal.meal_photo.url}}" class = "img-rounded"></a>
       <h3>요리 : {{recommended_meal.meal_name}}</h3>
@@ -15,15 +15,18 @@
 
 
       <div class="left">
-        <div class = "left_1">
-          <i class="fas fa-angle-left"><a href="#"></a></i>
+        <div class="container">
+             <div class = "left_1">
+              <i class="fas fa-angle-left"><a href="#"></a></i>
+             </div>
         </div>
-
       </div>
 
       <div class="right">
-       <div class = "right_!">
-         <i class="fas fa-angle-right"><a href="#"></a></i>
-       </div>
+          <div class="container">
+            <div class = "right_!">
+             <i class="fas fa-angle-right"><a href="#"></a></i>
+           </div>
+          </div>
       </div>
   {% endblock %}
