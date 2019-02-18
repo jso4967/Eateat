@@ -1,0 +1,41 @@
+
+.container{
+  float: center;
+  padding-top: 20%
+  padding-bottom: 30%;
+  text-align : center;
+  width: 33%;
+  height:100%
+}
+.picture_food{
+  text-align: center;
+  border : 3px solid black;
+
+}
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.left{
+  float:left;
+  float: left;
+  width: 33%;
+  height:100%
+}
+.left_1{
+  padding-top: 20%
+  padding-bottom: 30%;
+}
+
+.right{
+  float:right;
+  float: right;
+  width: 33%;
+  height:100%
+}
+.right_1{
+  padding-top: 20%
+  padding-bottom: 30%;
+}
