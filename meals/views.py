@@ -19,7 +19,9 @@ class IndexView(TemplateView):
         # context["recommended_meal"] = models.Meal.objects.order_by('?').first()
         #TODO : 추천 기준 추가 (날짜, gps, etc)
         current_time = timezone.now()
-        object_list = models.Meal.objects.filter(created_date__lte=(current_time - timedelta(days=-3)))
+
+        object_list = models.Meal.objects.filter(created_date__lte=(current_time + timedelta(days=-3)))
+
         context["recommended_meal"] = random.choice(object_list)
         return context
 
