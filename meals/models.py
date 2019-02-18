@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.utils import timezone
 
 # Create your models here.
 class Meal(models.Model):
@@ -12,6 +13,7 @@ class Meal(models.Model):
     restaurant_name = models.CharField(max_length=200, default='')
     price_range = models.CharField(max_length=2, choices=CHOICES, default="")
     satisfaction = models.CharField(max_length=2, choices=CHOICES, default="")
+    created_date = models.DateTimeField(default=timezone.now)
 
     def get_absolute_url(self):  # redirect시 활용
         return reverse('index')
