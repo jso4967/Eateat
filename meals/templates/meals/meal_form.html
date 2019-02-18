@@ -7,8 +7,24 @@
   Update Meal
   {% endif %}
 </h1>
+<script>
+    var = takePicture = document.querySelector("#take-picture");
+    takePicture.onchange = function (even) {
+        var files = event.target.files, file;
+        if (files && files.length > 0) {
+            file = files[0]
+            }
+         }
 
+     var showPicture = document.querySelector("#show-picture");
+     var URL = window.URL || window.webkitURL;
+     var imgURL = URL.createObjectURL(file);
+     showPicture.src = imgURL;
+     URL.revokeObjectURL(imgURL);
 
+</script>
+<input type="file" id="take-picture" accept="media/*">
+<img src="about:blank"  alt="" id="show-picture">
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
