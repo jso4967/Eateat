@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.views.generic import (CreateView, ListView, DetailView, DeleteView, TemplateView,UpdateView,)
-
 from django.urls import (reverse, reverse_lazy)
 from django.utils import timezone
 from datetime import timedelta
