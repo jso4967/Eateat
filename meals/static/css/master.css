@@ -44,11 +44,14 @@ img {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 10px;
-}
+    background-color: #ff9000
+  }
 .box1{
+  margin-top: 100px;
   border: 1px solid black;
 }
 
 .box2{
+  margin-top: 20px;
   border: 1px solid black;
 }
