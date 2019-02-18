@@ -1,18 +1,10 @@
 from django.shortcuts import render
 from django.views.generic import (CreateView, ListView, DetailView, DeleteView, TemplateView,UpdateView,)
-<<<<<<< HEAD
-from . import models
-from . import forms
-from django.urls import (reverse, reverse_lazy)
-from django.utils import timezone
-from datetime import timedelta
-=======
 from django.urls import (reverse, reverse_lazy)
 from django.utils import timezone
 from datetime import timedelta
 from . import models
 from . import forms
->>>>>>> parent of 246b13b... TEST AT 8:19
 import random
 # Create your views here.
 
@@ -34,10 +26,6 @@ class IndexView(TemplateView):
 
 
 class MealCreateView(CreateView):
-<<<<<<< HEAD
-=======
-
->>>>>>> parent of 246b13b... TEST AT 8:19
     model = models.Meal
     form_class = forms.MealForm
 

@@ -15,7 +15,10 @@ class Meal(models.Model):
     satisfaction = models.CharField(max_length=2, choices=CHOICES, default="")
     created_date = models.DateTimeField(default=timezone.now)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 246b13b... TEST AT 8:19
 
 >>>>>>> parent of 246b13b... TEST AT 8:19
     def get_absolute_url(self):  # redirect시 활용
