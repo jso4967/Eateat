@@ -4,11 +4,12 @@
   <div class="container">
     <div class="picture_food" style="margin-top: 50px;">
 
-        <a href="{% url 'meals:detail' pk=recommended_meal.pk %}"><img src="{{recommended_meal.meal_photo.url}}" class = "img-rounded"></a>
-      <h3>요리 : {{recommended_meal.meal_name}}</h3>
+        <a href="{%url 'meals:detail' pk=recommended_meal.pk %}"><img src="{{recommended_meal.meal_photo.url}}" class = "img-rounded"></a>
+      <h1>{{recommended_meal.meal_name}}</h1>
       <ul>
-        <p>식당 이름 :{{recommended_meal.restaurant_name}}</p>
-
+        <p>{{recommended_meal.restaurant_name}}</p>
+        <p>{{recommended_meal.price_range}}</p>
+        <p>{{recommended_meal.satisfaction}}</p>
       </ul>
     </div>
   </div>
