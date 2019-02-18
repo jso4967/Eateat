@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import (CreateView, ListView, DetailView, DeleteView, TemplateView,UpdateView,)
-from . import models
 from django.urls import (reverse, reverse_lazy)
+from . import models
+from . import forms
 # Create your views here.
 
 
@@ -16,8 +17,13 @@ class IndexView(TemplateView):
         return context
 
 class MealCreateView(CreateView):
-    fields = ("meal_photo", "meal_name", "restaurant_name", "price_range", "satisfaction")
+
     model = models.Meal
+    form_class = forms.MealForm
+
+    def form_valid(self,form):
+        form.save()
+        return super(MealCreateView,self).form_valid(form)
 
     def get_absolute_url(self):
         return reverse('index')
@@ -53,5 +59,3 @@ class MealDelete(DeleteView):
 class MealUpdateView(UpdateView):
     fields = ("meal_photo", "meal_name", "restaurant_name", "price_range", "satisfaction")
     model = models.Meal
-
-
