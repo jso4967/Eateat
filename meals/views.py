@@ -21,7 +21,6 @@ class IndexView(TemplateView):
         current_time = timezone.now()
         object_list = models.Meal.objects.filter(created_date__lte=(current_time - timedelta(days=-3)))
         context["recommended_meal"] = random.choice(object_list)
-
         return context
 
 
