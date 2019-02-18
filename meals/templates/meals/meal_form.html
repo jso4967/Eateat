@@ -1,45 +1,15 @@
 {% extends  'base.html' %}
 {% block body_block %}
-<!--<script>-->
-        <!--function getLocation() {-->
-  <!--if (navigator.geolocation) { // GPS를 지원하면-->
-    <!--navigator.geolocation.getCurrentPosition(function(position) {-->
-      <!--alert(position.coords.latitude + ' ' + position.coords.longitude);-->
-    <!--}, function(error) {-->
-      <!--console.error(error);-->
-    <!--}, {-->
-      <!--enableHighAccuracy: true,-->
-      <!--maximumAge: 0,-->
-      <!--timeout: Infinity-->
-    <!--});-->
-  <!--} else {-->
-    <!--alert('GPS를 지원하지 않습니다');-->
-  <!--}-->
-<!--}-->
-<!--getLocation()-->
-<!--</script>-->
-<script>
-
-</script>
-    <div class="offset-3 col-md-6">
-        <h1>
-        {% if not form.instance.pk %}
-        Create Meal
-        {% else %}
-        Update Meal
-        {% endif %}
-        </h1>
-        <form method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            <div class="form-group">
-                {%for field in form%}
-
-                    <p>{{field.label_tag}} {{field}} </p>
-                    <p></p>
-
-                {% endfor %}
-            </div>
-            <button type="submit">Save</button>
-        </form>
-    </div>
+    <h1>
+  {% if not form.instance.pk %}
+  Create Meal
+  {% else %}
+  Update Meal
+  {% endif %}
+</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
 {% endblock %}

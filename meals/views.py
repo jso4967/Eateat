@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import (CreateView, ListView, DetailView, DeleteView, TemplateView,UpdateView,)
+
 from django.urls import (reverse, reverse_lazy)
 from django.utils import timezone
 from datetime import timedelta
@@ -70,3 +71,5 @@ class MealDelete(DeleteView):
 class MealUpdateView(UpdateView):
     fields = ("meal_photo", "meal_name", "restaurant_name", "price_range", "satisfaction")
     model = models.Meal
+
+
