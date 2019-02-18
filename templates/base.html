@@ -1,60 +1,107 @@
 <!DOCTYPE html>
 <html>
 {% load static %}
-<head>
+  <head>
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js"
-          integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l"
-          crossorigin="anonymous"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js"
-          integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c"
-          crossorigin="anonymous"></script>
-  <meta charset="utf-8">
-  <title>What do you want to eat?</title>
-  <link rel="stylesheet" href="{% static 'css/master.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <title>What do you want to eat?</title>
+    <link rel="stylesheet" href="{% static 'css/master.css' %}">
+    <!--<style>-->
 
-</head>
-<body>
+<!--.container{-->
+  <!--float: center;-->
+  <!--padding-top: 20%-->
+  <!--padding-bottom: 30%;-->
+  <!--text-align : center;-->
+  <!--width: 33%;-->
+  <!--height:100%-->
+<!--}-->
+<!--.picture_food{-->
+  <!--text-align: center;-->
+  <!--border : 3px solid black;-->
 
-<div class="header">
-  <nav class="navbar navbar-expand-lg navbar-light bg-info navbar-dark fixed">
-    <a class="navbar-brand" href="{% url 'index' %}">Eat Eat</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<!--}-->
+<!--img {-->
+  <!--display: block;-->
+  <!--width: 100%;-->
+  <!--height: auto;-->
+<!--}-->
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'meals:create' %}">입력</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'admin:index' %}">사용자</a>
-        </li>
-        <li class="nave-item">
-          <a class="nav-link" href="{% url 'meals:list'%}">목록</a>
-        </li>
-      </ul>
+<!--.left{-->
+  <!--float:left;-->
+  <!--float: left;-->
+  <!--width: 33%;-->
+  <!--height:100%-->
+<!--}-->
+<!--.left_1{-->
+  <!--padding-top: 20%-->
+  <!--padding-bottom: 30%;-->
+<!--}-->
 
-    </div>
-  </nav>
-</div>
+<!--.right{-->
+  <!--float:right;-->
+  <!--float: right;-->
+  <!--width: 33%;-->
+  <!--height:100%-->
+<!--}-->
+<!--.right_1{-->
+  <!--padding-top: 20%-->
+  <!--padding-bottom: 30%;-->
+<!--}-->
+
+    <!--</style>-->
+
+  </head>
+  <body>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-info navbar-dark fixed">
+        <a class="navbar-brand" href="{% url 'index' %}">Eat Eat</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class = "nav-link" href="{% url 'meals:create' %}">입력</a>
+            </li>
+            <li class="nav-item">
+              <a class = "nav-link" href="{% url 'admin:index' %}">사용자</a>
+            </li>
+            <li class="nave-item">
+              <a class = "nav-link" href="{% url 'meals:list'%}">목록</a>
+            </li>
+          </ul>
+
+        </div>
+      </nav>
 
 
-{% block body_block %}
-{% endblock %}
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-</body>
+        {% block body_block %}
+        {% endblock %}
+
+      <!-- (랜덤으로 사진입력, 사진 하나만 불러오기) -->
+        <!--<div class="picture_food">-->
+            <!--<a href="음식 포스트 글로!!"><img src="#" alt="" class = "img-rounded"></a>-->
+            <!--<h1>Food.info</h1>-->
+            <!--<ul>-->
+              <!--<li>{{post.details}}</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="left">-->
+      <!--<i class="fas fa-angle-left"><a href="이전글"></a></i>-->
+
+    <!--</div>-->
+    <!--<div class="right">-->
+      <!--<i class="fas fa-angle-right"><a href="랜덤 음식포스트"></a></i>-->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  </body>
 </html>

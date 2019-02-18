@@ -1,27 +1,10 @@
 {% extends  'base.html' %}
 {% block body_block %}
-<!--<script>-->
-        <!--function getLocation() {-->
-  <!--if (navigator.geolocation) { // GPS를 지원하면-->
-    <!--navigator.geolocation.getCurrentPosition(function(position) {-->
-      <!--alert(position.coords.latitude + ' ' + position.coords.longitude);-->
-    <!--}, function(error) {-->
-      <!--console.error(error);-->
-    <!--}, {-->
-      <!--enableHighAccuracy: true,-->
-      <!--maximumAge: 0,-->
-      <!--timeout: Infinity-->
-    <!--});-->
-  <!--} else {-->
-    <!--alert('GPS를 지원하지 않습니다');-->
-  <!--}-->
-<!--}-->
-<!--getLocation()-->
-<!--</script>-->
-<script>
 
-</script>
-    <div class="offset-3 col-md-6">
+  <div class="offset-3 col-md-6" id="wrapper">
+
+      <div class="box1">
+
         <h1>
         {% if not form.instance.pk %}
         Create Meal
@@ -29,17 +12,37 @@
         Update Meal
         {% endif %}
         </h1>
+
+      </div>
+
+      <div class="box2">
+
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-group">
                 {%for field in form%}
-
                     <p>{{field.label_tag}} {{field}} </p>
                     <p></p>
-
                 {% endfor %}
+
             </div>
-            <button type="submit">Save</button>
+          <button type="submit">Save</button>
         </form>
-    </div>
+      </div>
+
+  </div>
+    <!--<form action = "#" accept-charset="utf-8" name = "food_info" method = "get">-->
+
+               <!--식당 이름 : <input type="text" name="food_name"required><br></br>-->
+               <!--음식 이름 : <input type = "text" name = "name" required/><br></br>-->
+
+               <!--사진 업로드 : <input type="file" multiple accept='image/*|audio/*|video/*' >-->
+
+               <!--평점 :<input type="radio" name="food" >상-->
+                    <!--<input type="radio" name="food" >중-->
+                    <!--<input type="radio" name="food" >하 <br></br>-->
+
+               <!--<input type = "submit" value = "submit"/>-->
+               <!--<input type = "reset" value = "reset"/><br><br>-->
+    <!--</form>-->
 {% endblock %}

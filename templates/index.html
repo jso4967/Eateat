@@ -6,9 +6,11 @@
 
         <a href="{% url 'meals:detail' pk=recommended_meal.pk %}"><img src="{{recommended_meal.meal_photo.url}}" class = "img-rounded"></a>
       <h3>요리 : {{recommended_meal.meal_name}}</h3>
-      <ul>
-        <p>식당 이름 :{{recommended_meal.restaurant_name}}</p>
 
+      <ul>
+        <p>{{recommended_meal.restaurant_name}}</p>
+        <p>{{recommended_meal.price_range}}</p>
+        <p>{{recommended_meal.satisfaction}}</p>
       </ul>
     </div>
   </div>
@@ -17,7 +19,13 @@
       <div class="left">
         <div class="container">
              <div class = "left_1">
-              <i class="fas fa-angle-left"><a href="#"></a></i>
+              <a href="#">
+                  <svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" data-fa-i2svg="" style="
+                     width: 100px;
+                     height: 80px;
+                   "><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path>
+                  </svg>
+              </a>
              </div>
         </div>
       </div>
@@ -25,7 +33,14 @@
       <div class="right">
           <div class="container">
             <div class = "right_!">
-             <i class="fas fa-angle-right"><a href="#"></a></i>
+             <a href="#">
+                 <svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" data-fa-i2svg="" style="
+                    width: 100px;
+                    height: 80px;
+                  "><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path>
+                 </svg>
+             </a>
+
            </div>
           </div>
       </div>

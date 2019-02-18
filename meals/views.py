@@ -23,11 +23,11 @@ class IndexView(TemplateView):
         object_list = models.Meal.objects.filter(created_date__lte=(current_time + timedelta(days=-3)))
 
         context["recommended_meal"] = random.choice(object_list)
+
         return context
 
 
 class MealCreateView(CreateView):
-
     model = models.Meal
     form_class = forms.MealForm
 
@@ -72,3 +72,5 @@ class MealDelete(DeleteView):
 class MealUpdateView(UpdateView):
     fields = ("meal_photo", "meal_name", "restaurant_name", "price_range", "satisfaction")
     model = models.Meal
+
+
