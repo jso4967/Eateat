@@ -1,9 +1,9 @@
 {% extends  'base.html' %}
 {% block body_block %}
 
-  <div class="offset-3 col-md-6" id="wrapper">
+  <div class="offset-3 col-md-6" id="mealform">
 
-      <div class="box1">
+      <div class="mealform_1">
 
         <h1>
         {% if not form.instance.pk %}
@@ -15,13 +15,13 @@
 
       </div>
 
-      <div class="box2">
+      <div class="mealform_2">
 
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-group">
                 {%for field in form%}
-                    <p>{{field.label_tag}} {{field}} </p>
+                    <p>{{field.label_tag}} {{field}}    </p>
                     <p></p>
                 {% endfor %}
 
