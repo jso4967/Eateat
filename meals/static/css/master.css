@@ -1,8 +1,9 @@
 
+.{
+  background-color: red;
+}
 .container{
   float: center;
-  padding-top: 20%
-  padding-bottom: 30%;
   text-align : center;
   width: 33%;
   height:100%
@@ -13,9 +14,9 @@
 
 }
 img {
-  display: block;
-  width: 100%;
-  height: auto;
+  margin : 8%;
+  width:80%;
+  border-radius:5%;
 }
 
 .left{
