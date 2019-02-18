@@ -1,11 +1,26 @@
 {% extends  'base.html' %}
 {% block body_block %}
-<style>
-    .
+<!--<script>-->
+        <!--function getLocation() {-->
+  <!--if (navigator.geolocation) { // GPS를 지원하면-->
+    <!--navigator.geolocation.getCurrentPosition(function(position) {-->
+      <!--alert(position.coords.latitude + ' ' + position.coords.longitude);-->
+    <!--}, function(error) {-->
+      <!--console.error(error);-->
+    <!--}, {-->
+      <!--enableHighAccuracy: true,-->
+      <!--maximumAge: 0,-->
+      <!--timeout: Infinity-->
+    <!--});-->
+  <!--} else {-->
+    <!--alert('GPS를 지원하지 않습니다');-->
+  <!--}-->
+<!--}-->
+<!--getLocation()-->
+<!--</script>-->
+<script>
 
-
-</style>
-
+</script>
     <div class="offset-3 col-md-6">
         <h1>
         {% if not form.instance.pk %}
@@ -18,6 +33,7 @@
             {% csrf_token %}
             <div class="form-group">
                 {%for field in form%}
+
                     <p>{{field.label_tag}} {{field}} </p>
                     <p></p>
 
@@ -26,19 +42,4 @@
             <button type="submit">Save</button>
         </form>
     </div>
-
-    <!--<form action = "#" accept-charset="utf-8" name = "food_info" method = "get">-->
-
-               <!--식당 이름 : <input type="text" name="food_name"required><br></br>-->
-               <!--음식 이름 : <input type = "text" name = "name" required/><br></br>-->
-
-               <!--사진 업로드 : <input type="file" multiple accept='image/*|audio/*|video/*' >-->
-
-               <!--평점 :<input type="radio" name="food" >상-->
-                    <!--<input type="radio" name="food" >중-->
-                    <!--<input type="radio" name="food" >하 <br></br>-->
-
-               <!--<input type = "submit" value = "submit"/>-->
-               <!--<input type = "reset" value = "reset"/><br><br>-->
-    <!--</form>-->
 {% endblock %}
