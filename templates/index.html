@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 
   {% block body_block %}
+  <div id = 'indexbody'>
+
+
   <div class="container">
     <div class="picture_food" style="margin-top: 50px;">
 
-        <a href="{% url 'meals:detail' pk=recommended_meal.pk %}"><img src="{{recommended_meal.meal_photo.url}}" class = "img-rounded"></a>
+        <a href="{% url 'meals:detail' pk=recommended_meal.pk %}"><img src="{{recommended_meal.meal_photo.url}}"></a>
       <h3>요리 : {{recommended_meal.meal_name}}</h3>
 
       <ul>
@@ -43,5 +46,6 @@
 
            </div>
           </div>
+      </div>
       </div>
   {% endblock %}
