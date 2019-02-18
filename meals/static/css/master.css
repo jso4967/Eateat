@@ -39,3 +39,16 @@ img {
   padding-top: 20%
   padding-bottom: 30%;
 }
+
+# wrapper{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+}
+.box1{
+  border: 1px solid black;
+}
+
+.box2{
+  border: 1px solid black;
+}
