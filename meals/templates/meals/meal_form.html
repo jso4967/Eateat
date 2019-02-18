@@ -23,8 +23,10 @@
      URL.revokeObjectURL(imgURL);
 
 </script>
+<h2>모바일 카메라 테스트</h2>
 <input type="file" id="take-picture" accept="media/*">
 <img src="about:blank"  alt="" id="show-picture">
+<h2>원본</h2>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
