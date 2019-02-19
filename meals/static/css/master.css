@@ -1,57 +1,58 @@
 
-.container{
-  float: center;
-  padding-top: 20%
-  padding-bottom: 30%;
-  text-align : center;
-  width: 33%;
-  height:100%
-}
-.picture_food{
-  text-align: center;
-  border : 3px solid black;
-
-}
-img {
-  display: block;
-  width: 100%;
-  height: auto;
+#indexbody{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-.left{
-  float:left;
-  float: left;
-  width: 33%;
-  height:100%
-}
-.left_1{
-  padding-top: 20%
-  padding-bottom: 30%;
+#center{
+
+ margin-top:10%;
+ margin-bottom: 20%;
+ text-align : center;
+ width: 100%;
+ height: 100%;
 }
 
-.right{
-  float:right;
-  float: right;
-  width: 33%;
-  height:100%
-}
-.right_1{
-  padding-top: 20%
-  padding-bottom: 30%;
+#mainimage img{
+  margin-top:5%;
+  width:100%;
+  height:500px;
+  border-radius: 8px;
+  }
+
+#left{
+  margin-top: 60%;
+  margin-left:20%;
 }
 
-# wrapper{
+
+#right{
+  margin-top: 60%;
+  margin-left: 35%;
+}
+
+#mealdelete{
+    margin : 100px;
+}
+
+#mealdelete img{
+  border-radius: 8%;
+  width: 350px;
+  height: 400px;
+}
+
+#mealform{
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 10px;
 
   }
-.box1{
+.mealform_1{
   margin-top: 100px;
 
 }
 
-.box2{
+.mealform_2{
   margin-top: 20px;
 
 }

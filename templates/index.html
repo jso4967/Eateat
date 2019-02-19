@@ -1,47 +1,44 @@
 {% extends "base.html" %}
 
   {% block body_block %}
-  <div class="container">
-    <div class="picture_food" style="margin-top: 50px;">
+  <div class = "row" id = "indexbody">
 
-        <a href="{% url 'meals:detail' pk=recommended_meal.pk %}"><img src="{{recommended_meal.meal_photo.url}}" class = "img-rounded"></a>
-      <h3>요리 : {{recommended_meal.meal_name}}</h3>
+      <div class="column" id="left">
+                <a href="#">
+                    <svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" data-fa-i2svg="" style="
+                       width: 100px;
+                       height: 80px;
+                     "><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path>
+                    </svg>
+                </a>
+      </div>
 
-      <ul>
-        <p>{{recommended_meal.restaurant_name}}</p>
-        <p>{{recommended_meal.price_range}}</p>
-        <p>{{recommended_meal.satisfaction}}</p>
-      </ul>
-    </div>
-  </div>
+      <div class="column" id = "center">
 
-
-      <div class="left">
-        <div class="container">
-             <div class = "left_1">
-              <a href="#">
-                  <svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" data-fa-i2svg="" style="
-                     width: 100px;
-                     height: 80px;
-                   "><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path>
-                  </svg>
-              </a>
-             </div>
+        <div id = "mainimage">
+          <a href="{% url 'meals:detail' pk=recommended_meal.pk %}">
+            <img src="{{recommended_meal.meal_photo.url}}">
+          </a>
         </div>
+
+        <p></p>
+
+        <div class="maincomponent">
+
+        <h3>요리 : {{recommended_meal.meal_name}}</h3>
+        <p>{{recommended_meal.restaurant_name}}</p>
+        </div>
+
       </div>
 
-      <div class="right">
-          <div class="container">
-            <div class = "right_!">
-             <a href="#">
-                 <svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" data-fa-i2svg="" style="
-                    width: 100px;
-                    height: 80px;
-                  "><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path>
-                 </svg>
-             </a>
-
-           </div>
-          </div>
+      <div class="column" id = "right">
+               <a href="#">
+                   <svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" data-fa-i2svg="" style="
+                      width: 100px;
+                      height: 80px;
+                    "><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path>
+                   </svg>
+               </a>
       </div>
+  </div>
   {% endblock %}
