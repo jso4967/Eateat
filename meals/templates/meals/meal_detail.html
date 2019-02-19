@@ -8,7 +8,7 @@
     <div class="picture_food" style="margin-top: 50px;">
 
         <a href="{% url 'meals:detail' pk=Meal_detail.pk %}"><img src="{{Meal_detail.meal_photo.url}}" class = "img-rounded"></a>
-      <h3>요리 : {{.meal_name}}</h3>
+      <h3>{{Meal_detail.meal_name}}</h3>
 
       <ul>
         <p>{{Meal_detail.restaurant_name}}</p>
