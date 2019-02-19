@@ -1,15 +1,22 @@
 {% extends "base.html" %}
 
     {% block body_block %}
-
+        <div class="container" style="margin-top: 50px">
         <form action="" method="get">
           <input type="text" name="q" value="{{ q }}">
           <input type="submit" value="검색">
         </form>
+        </div>
 
-        {% for Meal in Meal_list %}
-            <div class="">
-              <h1><a href="{%url 'meals:detail' pk=Meal.pk %}">{{Meal.meal_name}}</a> </h1>
-            </div>
-        {%endfor%}
+
+<div class="container" style="margin-top: 50px">
+{% for Meal in Meal_list %}
+
+<div class="list-group">
+            <h1><a href="{%url 'meals:detail' pk=Meal.pk %}" class="list-group-item list-group-item-action ">{{Meal.meal_name}}</a></h1>
+
+</div>
+
+{% endfor %}
+    </div>
     {% endblock %}
