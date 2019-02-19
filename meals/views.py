@@ -20,8 +20,8 @@ class IndexView(TemplateView):
         #TODO : 추천 기준 추가 (날짜, gps, etc)
         current_time = timezone.now()
 
-        object_list = models.Meal.objects.filter(created_date__lte=(current_time + timedelta(days=-3)))
-
+        object_list = models.Meal.objects.filter(recent_visit_date__lte=(current_time + timedelta(days=-3)))
+        #TODO :  3일 이전 내용이 없을 경우 핸들링 해야 함
         context["recommended_meal"] = random.choice(object_list)
 
         return context
@@ -70,7 +70,8 @@ class MealDelete(DeleteView):
 
 
 class MealUpdateView(UpdateView):
-    fields = ("meal_photo", "meal_name", "restaurant_name", "price_range", "satisfaction")
+    fields = ("meal_photo", "meal_name", "restaurant_name", "price_range", "satisfaction", "count")
     model = models.Meal
 
-
+    def get_absolute_url(self):
+        return reverse('meals:list')
