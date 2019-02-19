@@ -5,7 +5,17 @@
             <div class="">
               <div class="container">
               <div style="margin-top: 100px;">
-                <h1>{{Meal_detail.meal_name}} </h1>
+    <div class="picture_food" style="margin-top: 50px;">
+
+        <a href="{% url 'meals:detail' pk=Meal_detail.pk %}"><img src="{{Meal_detail.meal_photo.url}}" class = "img-rounded"></a>
+      <h3>요리 : {{.meal_name}}</h3>
+
+      <ul>
+        <p>{{Meal_detail.restaurant_name}}</p>
+        <p>{{Meal_detail.price_range}}</p>
+        <p>{{Meal_detail.satisfaction}}</p>
+      </ul>
+    </div>
                 <a href="{% url 'meals:delete' pk=Meal_detail.pk%}" class="btn btn-info btn-lg"><i class="fas fa-trash-alt"></i>Delete</a>
                 <a href="{% url 'meals:update' pk=Meal_detail.pk%}" class="btn btn-info btn-lg"><i class="fas fa-edit"></i>Update</a>
               </div>
